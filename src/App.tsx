@@ -384,7 +384,7 @@ export default function App() {
               <div className="absolute inset-4 bg-gradient-to-tr from-cyan-500 to-purple-600 rounded-full blur-2xl opacity-40 animate-pulse print:hidden"></div>
               
               <img 
-                src="./photo.jpg" 
+                src="/photo.jpg" 
                 alt={RESUME_DATA.name}
                 referrerPolicy="no-referrer"
                 onError={(e) => { (e.target as HTMLImageElement).src = "https://picsum.photos/seed/ivan-rodin/400/400"; }}
