@@ -14,86 +14,113 @@ import { motion, useScroll, useTransform } from 'motion/react';
 
 // --- DATA ENRICHED FOR INFOGRAPHICS ---
 const RESUME_DATA = {
-  name: "Родин Иван",
-  title: "Менеджер по развитию бизнеса",
-  subtitle: "B2B Sales & Business Development",
+  name: "Иван Родин",
+  title: "Business Development Manager",
+  subtitle: "Менеджер по продажам и развитию бизнеса (B2B, Enterprise)",
   personal: {
-    age: "32 года",
+    age: "33 года",
     birthDate: "9 января 1993",
     location: "Москва",
     citizenship: "Россия",
     workPermit: "Россия",
-    relocation: "Готов к переезду и командировкам",
+    relocation: "готов к переезду, редким командировкам",
     employment: "Полная занятость",
     schedule: "Полный день"
   },
   contacts: {
-    phone: "+7 (903) 2929503",
+    phone: "+7 (903) 292 95 03",
     email: "ivanrodin@live.ru",
     preferred: "Телефон"
   },
   stats: [
     { label: "Лет опыта", value: "10+", icon: Briefcase, color: "from-blue-400 to-blue-600" },
-    { label: "Крупнейшие контракты", value: "100м+", suffix: "₽", icon: TrendingUp, color: "from-emerald-400 to-emerald-600" },
-    { label: "Цикл сделки", value: "3-6", suffix: "мес", icon: Clock, color: "from-purple-400 to-purple-600" },
+    { label: "Сумма контрактов", value: "100м+", suffix: "₽", icon: TrendingUp, color: "from-emerald-400 to-emerald-600" },
+    { label: "Цикл сделки", value: "3-6+", suffix: "мес", icon: Clock, color: "from-purple-400 to-purple-600" },
     { label: "Сегмент", value: "B2B", suffix: "Ent", icon: Building2Icon, color: "from-orange-400 to-orange-600" }
   ],
   skills: [
-    { name: "B2B Продажи", value: 95, icon: Target },
-    { name: "Business Development", value: 92, icon: Rocket },
-    { name: "Переговоры (C-level)", value: 95, icon: Users },
-    { name: "Управление командой", value: 85, icon: ShieldCheck },
-    { name: "Холодные звонки", value: 88, icon: PhoneCall },
-    { name: "Аналитика (Excel, Qlik)", value: 80, icon: PieChart },
-    { name: "CRM (Bitrix24)", value: 90, icon: Database },
-    { name: "Презентации (PowerPoint)", value: 85, icon: Star }
+    { name: "Enterprise sales", value: 95, icon: Target },
+    { name: "Выход на ЛПР / C-level", value: 95, icon: Users },
+    { name: "Тендерные процедуры", value: 90, icon: ShieldCheck },
+    { name: "Pre-sale & Координация", value: 88, icon: Rocket },
+    { name: "Управление воронкой", value: 92, icon: LineChart },
+    { name: "CRM (Битрикс24)", value: 90, icon: Database },
+    { name: "Презентации (PowerPoint)", value: 85, icon: Star },
+    { name: "Аналитика (Excel)", value: 80, icon: PieChart }
   ],
   languages: [
     { name: "Русский", level: "Родной", value: 100 },
-    { name: "Английский", level: "B2 (Upper-Int)", value: 75 }
+    { name: "Английский", level: "B2", value: 75 }
   ],
   experience: [
+    {
+      period: "Ноя 2025 — Мар 2026",
+      duration: "5 месяцев",
+      company: "ICL Soft (ГК ICL)",
+      location: "Москва",
+      industry: "Разработка ПО, внедрение систем, IT-услуги",
+      role: "Business Development Manager",
+      duties: [
+        "Развитие отношений с корпоративными клиентами: выход на ЛПР и C-level",
+        "Продвижение продуктовых и кастомных IT-решений",
+        "Подготовка КП совместно с pre-sale и техническими командами",
+        "Подготовка тендерной и конкурсной документации",
+        "Координация взаимодействия внутренних команд для достижения целей"
+      ],
+      metrics: [
+        { label: "Сегмент", value: "Enterprise" }
+      ],
+      results: [
+        "Формирование новых коммерческих возможностей",
+        "Сформировал воронку целевых клиентов",
+        "Участвовал в тендерных/закупочных процедурах"
+      ]
+    },
     {
       period: "Янв 2024 — Дек 2024",
       duration: "1 год",
       company: "Optimacros",
       location: "Москва",
-      industry: "PaaS решение для анализа Big Data (IBP, S&OP, FP&A)",
+      industry: "PaaS-платформа для анализа больших данных и планирования",
       role: "Business Development Manager",
       duties: [
-        "Организация полного цикла продаж, включая pre-sale",
-        "Управление командой (9 человек: интеграция, pre-sale, бэк-офис)",
-        "Анализ рынка и поиск 'портрета идеального клиента'",
-        "Внедрение и настройка CRM Битрикс 24"
+        "Полный цикл продаж, включая pre-sale",
+        "Постановка задач и контроль: интеграция (3), pre-sale (4), back-office (2)",
+        "Анализ рынка, формирование ICP (портрета идеального клиента)",
+        "Квалификация inbound/outbound лидов"
       ],
       metrics: [
-        { label: "Контракты", value: "~100 млн ₽" },
-        { label: "Проработка", value: "70+ компаний РБК 500" }
+        { label: "Средний чек", value: "от 10 млн ₽" },
+        { label: "Цикл сделки", value: "от 3 до 6+ мес" },
+        { label: "Сегмент", value: "Big Pharma, FMCG" }
       ],
       results: [
-        "Разработана стратегия продаж с нуля",
-        "Победы в тендерах FMCG лидеров",
-        "Организованы кросс-функциональные процессы"
+        "Разработал стратегию продаж",
+        "Победы в тендерах (FMCG-лидеры), сумма контрактов ~100 млн ₽",
+        "Выстроил процессы внутри команды и кросс-функционально",
+        "Глубоко проработал 70+ компаний из РБК-500"
       ]
     },
     {
       period: "Июн 2023 — Окт 2023",
       duration: "5 месяцев",
-      company: "VEA",
+      company: "VEA (vea.dev)",
       location: "Москва",
-      industry: "SaaS CRM/ERP для полиграфии",
+      industry: "SaaS (CRM/ERP для полиграфии) + заказная IT-разработка",
       role: "Business Development Manager",
       duties: [
-        "Поиск новых заказчиков для SaaS и ИТ разработки",
-        "Выход на ЛПР, презентации, подготовка КП/ТКП"
+        "Самостоятельный поиск клиентов (outbound), развитие продаж SaaS",
+        "Выход на ЛПР, выявление/формирование потребности, переговоры",
+        "Подготовка КП/ТКП, ведение отчётности и CRM (Битрикс24)"
       ],
       metrics: [
-        { label: "Сегмент", value: "SMB" },
-        { label: "Конверсия", value: "Рост холодных лидов" }
+        { label: "Цикл сделки", value: "3+ месяца" },
+        { label: "Сегмент", value: "SMB" }
       ],
       results: [
-        "Успешные продажи 'отказникам'",
-        "Масштабирование демо-презентаций"
+        "Закрыл продажи, включая клиентов, ранее отказывавшихся от сервиса",
+        "Подготовил тексты рассылок с учётом позиционирования",
+        "Актуализировал и настроил CRM"
       ]
     },
     {
@@ -101,36 +128,34 @@ const RESUME_DATA = {
       duration: "5 лет 2 месяца",
       company: "ЭМ ТИ СИ КОМПАНИ",
       location: "Москва",
-      industry: "Корпоративное обучение, LMS, ИТ разработка",
+      industry: "Корпоративное обучение, LMS, IT-разработка",
       role: "Business Development Manager",
       duties: [
         "Организация встреч, анализ профиля клиента",
-        "Ведение многоэтапных B2B продаж"
+        "Подготовка предложений/презентаций, проработка концепций",
+        "Многоэтапные продажи, ведение клиентов, наполнение воронки"
       ],
       metrics: [
+        { label: "Цикл сделки", value: "6+ месяцев" },
         { label: "Секторы", value: "Pharma, FMCG, Retail, IT" }
       ],
-      results: [
-        "Стабильное наполнение воронки продаж",
-        "Разработка концепций услуг"
-      ]
+      results: []
     },
     {
       period: "Июл 2015 — Май 2018",
       duration: "2 года 11 месяцев",
-      company: "Psyma Group",
+      company: "Псайма Групп (psyma.com)",
       location: "Москва",
       industry: "Маркетинговые исследования",
       role: "Менеджер по развитию бизнеса",
       duties: [
-        "Маркетинговый анализ рынка и стратегия",
-        "Переговоры на уровне первых лиц"
+        "Маркетинговый анализ, участие в стратегии развития",
+        "Мониторинг и участие в целевых тендерах",
+        "Переговоры на уровне первых лиц, презентации",
+        "Поиск партнёров, участие в выставках, холодные звонки"
       ],
       metrics: [],
-      results: [
-        "Успешное участие в тендерах",
-        "Организация участия в выставках"
-      ]
+      results: []
     },
     {
       period: "Ноя 2012 — Мар 2013",
@@ -138,54 +163,49 @@ const RESUME_DATA = {
       company: "БИНБАНК",
       location: "Москва",
       industry: "Банковский сектор",
-      role: "Главный менеджер департамента",
+      role: "Главный менеджер департамента международного бизнеса",
       duties: [
-        "Привлечение крупных корпоративных клиентов"
+        "Привлечение крупных корпоративных клиентов",
+        "Первичный финанализ, подготовка документов для кредитного комитета"
       ],
       metrics: [
-        { label: "Оборот клиентов", value: ">900 млн ₽" },
-        { label: "Сделки", value: "15 крупных кредитов" }
+        { label: "Оборот", value: "900+ млн ₽" }
       ],
       results: [
-        "Создана собственная клиентская база"
+        "Реализовал 15 крупных кредитных сделок",
+        "Сформировал клиентскую базу"
       ]
     },
     {
       period: "Июл 2012 — Окт 2012",
       duration: "4 месяца",
-      company: "СБЕРБАНК РОССИИ",
+      company: "Сбербанк России",
       location: "Москва",
       industry: "Банковский сектор",
-      role: "Специалист по работе с предприятиями",
+      role: "Специалист отдела по работе с предприятиями",
       duties: [
-        "Продажа розничных банковских продуктов"
+        "Продажи розничных банковских продуктов, переговоры с партнёрами"
       ],
-      metrics: [
-        { label: "Продажи", value: "300+ продуктов" }
-      ],
+      metrics: [],
       results: [
-        "Освоены техники прямых продаж"
+        "Реализовал 300+ единиц кредитных продуктов"
       ]
     }
   ],
   education: {
     year: "2014",
-    institution: "НИУ МГСУ",
+    institution: "МГСУ (НИУ)",
     faculty: "Экономика и управление",
     degree: "Специалист"
   },
   courses: [
-    { year: "2013", name: "Кредитование корпоративных клиентов", org: "БИНБАНК" },
-    { year: "2012", name: "Автокредитование", org: "Сбербанк" },
-    { year: "2012", name: "Потребительские кредиты", org: "Сбербанк" },
-    { year: "2012", name: "Банковские карты", org: "Сбербанк" },
-    { year: "2012", name: "Ипотечное кредитование", org: "Сбербанк" }
+    { year: "2012–2013", name: "Банковские продукты, кредитование корпоративных клиентов", org: "Сертификаты/обучение" }
   ],
   personalQualities: [
-    "Доброжелательность", "Исполнительность", "Структурный подход", 
-    "Стрессоустойчивость", "Командный игрок"
+    "Enterprise Sales", "Account Planning", "Discovery", 
+    "Тендерные закупки", "Кросс-функциональная координация"
   ],
-  hobbies: ["Чтение", "Психология", "Общая физическая подготовка (ОФП)"]
+  hobbies: ["Права: категория B"]
 };
 
 // Helper icon for stats
@@ -351,7 +371,7 @@ export default function App() {
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-slate-400 font-medium tracking-tight mb-8 max-w-2xl">
-                {RESUME_DATA.subtitle}. Эксперт в B2B продажах с фокусом на Enterprise сегмент и сложные ИТ-продукты.
+                BDM с 10+ годами опыта в B2B-продажах и развитии бизнеса в IT/услугах: enterprise-сделки, длинные циклы продаж (3–6+ месяцев), тендеры/закупки, работа с C-level, пресейл и координация кросс‑функциональных команд.
               </p>
               
               <div className="flex flex-wrap gap-4 text-sm font-bold text-slate-300">
@@ -365,7 +385,7 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-2 bg-slate-900/50 px-4 py-2 rounded-xl border border-slate-800 backdrop-blur-sm">
                   <Car size={16} className="text-cyan-400" />
-                  Готов к командировкам
+                  {RESUME_DATA.personal.relocation}
                 </div>
               </div>
             </motion.div>
