@@ -399,12 +399,12 @@ export default function App() {
                 Открыт для предложений
               </motion.div>
               
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[1.1]">
-                Привет, я <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">
-                  {RESUME_DATA.name}
-                </span>
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-2 tracking-tighter leading-[1.1]">
+                {RESUME_DATA.name}
               </h1>
+              <h2 className="text-xl md:text-2xl font-bold text-cyan-400 mb-6">
+                {RESUME_DATA.title}
+              </h2>
               <p className="text-lg text-slate-400 font-medium tracking-tight mb-8 max-w-3xl whitespace-pre-line">
                 {RESUME_DATA.summary}
               </p>
@@ -413,6 +413,14 @@ export default function App() {
                 <div className="flex items-center gap-2 bg-slate-900/50 px-4 py-2 rounded-xl border border-slate-800 backdrop-blur-sm">
                   <MapPin size={16} className="text-cyan-400" />
                   {RESUME_DATA.personal.location}
+                </div>
+                <div className="flex items-center gap-2 bg-slate-900/50 px-4 py-2 rounded-xl border border-slate-800 backdrop-blur-sm">
+                  <Phone size={16} className="text-cyan-400" />
+                  {RESUME_DATA.contacts.phone}
+                </div>
+                <div className="flex items-center gap-2 bg-slate-900/50 px-4 py-2 rounded-xl border border-slate-800 backdrop-blur-sm">
+                  <Mail size={16} className="text-cyan-400" />
+                  {RESUME_DATA.contacts.email}
                 </div>
                 <div className="flex items-center gap-2 bg-slate-900/50 px-4 py-2 rounded-xl border border-slate-800 backdrop-blur-sm">
                   <Globe size={16} className="text-cyan-400" />
@@ -771,16 +779,116 @@ export default function App() {
       {/* Print Styles Overrides */}
       <style>{`
         @media print {
-          html, body {
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-            background-color: #020617 !important;
+          /* Reset everything */
+          * {
+            background: transparent !important;
+            color: black !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
           }
-          header, footer, .print\\:hidden { display: none !important; }
-          section, .grid > div, .print\\:break-inside-avoid { page-break-inside: avoid; }
-          @page { margin: 1cm; }
-          main { padding-top: 0 !important; }
-          .max-w-7xl, .max-w-6xl { max-width: 100% !important; padding: 0 !important; }
+          
+          body {
+            font-size: 11pt;
+            line-height: 1.4;
+            background: white !important;
+            color: black !important;
+          }
+
+          /* Hide unnecessary elements */
+          header, footer, .print\\:hidden, svg, .blur-3xl, .blur-2xl, .blur-sm, .bg-gradient-to-r, .bg-gradient-to-tr, .bg-gradient-to-br {
+            display: none !important;
+          }
+
+          /* Layout resets */
+          main {
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: 100% !important;
+            display: block !important;
+          }
+          
+          .grid, .flex {
+            display: block !important;
+          }
+          
+          /* Hero Section */
+          .lg\\:col-span-7 {
+            width: 75% !important;
+            float: left !important;
+          }
+          .lg\\:col-span-5 {
+            width: 25% !important;
+            float: right !important;
+          }
+          
+          /* Clearfix for hero */
+          .grid-cols-1.lg\\:grid-cols-12::after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+
+          /* Photo */
+          img {
+            display: block !important;
+            width: 140px !important;
+            height: 140px !important;
+            border-radius: 50% !important;
+            margin: 0 0 20px auto !important;
+            border: none !important;
+          }
+
+          /* Typography */
+          h1 { font-size: 24pt !important; margin-bottom: 5px !important; }
+          h2 { font-size: 14pt !important; margin-top: 10px !important; margin-bottom: 10px !important; }
+          h2.text-3xl { font-size: 16pt !important; margin-top: 20px !important; border-bottom: 1px solid #000 !important; padding-bottom: 5px !important; }
+          h3 { font-size: 14pt !important; margin-top: 15px !important; margin-bottom: 5px !important; font-weight: bold !important; }
+          h4 { font-size: 12pt !important; margin-top: 10px !important; margin-bottom: 5px !important; font-weight: bold !important; text-transform: uppercase; }
+          p { font-size: 11pt !important; margin-bottom: 10px !important; }
+          
+          /* Lists */
+          ul {
+            list-style-type: disc !important;
+            margin-left: 20px !important;
+            margin-bottom: 15px !important;
+          }
+          li {
+            display: list-item !important;
+            margin-bottom: 5px !important;
+          }
+
+          /* Spacing and Borders */
+          .mb-20, .mb-12, .mb-8, .mb-6, .mb-4, .p-8, .p-6, .p-4 {
+            margin-bottom: 15px !important;
+            padding: 0 !important;
+            border: none !important;
+          }
+
+          /* Experience Items */
+          .relative.pl-10 {
+            padding-left: 0 !important;
+            border-left: none !important;
+            margin-bottom: 20px !important;
+          }
+          .absolute {
+            display: none !important;
+          }
+          
+          /* Badges / Tags */
+          .px-3.py-1, .px-4.py-2, .px-3.py-1\\.5 {
+            display: inline-block !important;
+            padding: 0 !important;
+            margin-right: 10px !important;
+            font-weight: bold !important;
+            border: none !important;
+          }
+
+          /* Page breaks */
+          section, .group, .print\\:break-inside-avoid {
+            page-break-inside: avoid !important;
+          }
+          
+          @page { margin: 1.5cm; }
         }
       `}</style>
     </div>
