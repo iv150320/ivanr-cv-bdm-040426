@@ -526,7 +526,7 @@ export default function App() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="relative pl-10 group"
+                    className="relative pl-10 group print:break-inside-avoid"
                   >
                     {/* Timeline Node */}
                     <div className="absolute -left-[11px] top-2 w-5 h-5 bg-slate-950 border-4 border-slate-700 rounded-full group-hover:border-cyan-400 transition-colors z-10">
@@ -771,17 +771,16 @@ export default function App() {
       {/* Print Styles Overrides */}
       <style>{`
         @media print {
-          body { background-color: white !important; color: black !important; }
-          .bg-slate-950, .bg-slate-900\\/40, .bg-slate-900, .bg-slate-800, .bg-slate-950\\/50 { background-color: white !important; }
-          .text-white, .text-slate-300, .text-slate-400 { color: black !important; }
-          .text-cyan-400, .text-purple-400, .text-blue-400 { color: #0284c7 !important; }
-          .border-slate-800, .border-slate-700 { border-color: #e2e8f0 !important; }
-          .max-w-7xl, .max-w-6xl { max-width: 100% !important; padding: 0 !important; }
-          main { padding-top: 0 !important; }
+          html, body {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            background-color: #020617 !important;
+          }
           header, footer, .print\\:hidden { display: none !important; }
-          section, .grid > div { page-break-inside: avoid; }
-          .shadow-sm, .shadow-lg, .shadow-2xl, .shadow-xl { box-shadow: none !important; }
-          .blur-3xl, .blur-2xl, .blur-sm { display: none !important; }
+          section, .grid > div, .print\\:break-inside-avoid { page-break-inside: avoid; }
+          @page { margin: 1cm; }
+          main { padding-top: 0 !important; }
+          .max-w-7xl, .max-w-6xl { max-width: 100% !important; padding: 0 !important; }
         }
       `}</style>
     </div>
