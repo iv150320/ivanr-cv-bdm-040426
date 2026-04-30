@@ -1,20 +1,29 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 📁 ivanr-cv-bdm-040426 - Project
 
-# Run and deploy your AI Studio app
+A generic code repository.
 
-This contains everything you need to run your app locally.
+## 🚀 Overview
 
-View your app in AI Studio: https://ai.studio/apps/f5b3fa54-8452-4d36-9481-e30bfe4c5ec4
+This repository contains the source code for **ivanr-cv-bdm-040426**. It serves as an example or functional implementation of its respective stack.
 
-## Run Locally
+## 🛠 Technology Stack
 
-**Prerequisites:**  Node.js
+- **Format**: Various files
 
+## 🏗 Architecture / Workflow
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```mermaid
+graph TD
+    Project[📁 Repository] --> Files[📄 Project Files]
+    Files --> Output[✨ Final Result]
+```
+
+## ⚙️ Usage
+
+To run or view this project locally:
+1. Clone the repository: `git clone https://github.com/iv150320/ivanr-cv-bdm-040426.git`
+2. Open the project in your preferred environment.
+3. For web apps, open the `index.html` file in a browser or serve it via a local web server (e.g. `npx serve` or Live Server).
+
+---
+**Author**: @iv150320
