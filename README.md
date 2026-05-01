@@ -61,12 +61,12 @@ This architecture ensures an efficient client-side experience for the CV present
 
 ```mermaid
 graph TD
-    A[User Browser] -->|Accesses Frontend URL| B(Vite Dev/Prod Server)
-    B --> C{React App - src/App.tsx}
-    C -->|Renders RESUME_DATA & UI Components| D[Interactive CV Display]
-    C -->|User Interaction with AI (e.g., Query)| E(Express.js Backend - Planned/Implicit)
-    E -->|Loads GEMINI_API_KEY| F[dotenv (.env.local)]
-    E -->|Securely calls with @google/genai| G(Google Gemini API)
+    A["User Browser"] -->|Accesses Frontend URL| B("Vite Dev/Prod Server")
+    B --> C{"React App - src/App.tsx"}
+    C -->|Renders RESUME_DATA & UI Components| D["Interactive CV Display"]
+    C -->|User Interaction with AI (e.g., Query)| E("Express.js Backend - Planned/Implicit")
+    E -->|Loads GEMINI_API_KEY| F["dotenv (.env.local)"]
+    E -->|Securely calls with @google/genai| G("Google Gemini API")
     G -->|Processes query, Generates response| E
     E -->|Sends AI response to Frontend| C
     C -->|Updates UI with AI Output| D
